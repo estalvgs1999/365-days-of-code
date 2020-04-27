@@ -8,7 +8,6 @@
 #  is equal to the product of all elements
 #  except nums[i].
 #
-#  Input/Output array must be sorted
 #  by: @estalvgs1999
 # ----------------------------------------
 
@@ -38,25 +37,25 @@ def ud_product_except_self(nums):
     return output
 
 # Solution without division
-# Complexity O(3n)
-def wd_product_except_self(nums):
+# Complexity O(2n)
+def product_except_self(nums):
 
     n = len(nums)
-    output = [None]*n
-    left_p,rigth_p = [1]*n, [1]*n
+    output = [1]*n
 
     for i in range(1,n):
-        left_p[i] = nums[i-1]*left_p[i-1]
+        output[i] = nums[i-1]*output[i-1]
 
-    for i in range(n-2,-1,-1):
-        rigth_p[i] = nums[i+1]*rigth_p[i+1]
-
-    for i in range(n):
-        output[i] = rigth_p[i]*left_p[i]
+    R = 1
+    for i in range(n-1,-1,-1):
+        output[i] = output[i]*R
+        R = R*nums[i]
 
     return output
+
+
 
 if __name__ == "__main__":
     print(bf_product_except_self([1,2,3,4]))
     print(ud_product_except_self([1,2,3,4]))
-    print(wd_product_except_self([1,2,3,4]))
+    print(product_except_self([1,2,3,4]))
