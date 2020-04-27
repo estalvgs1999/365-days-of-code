@@ -24,37 +24,44 @@
  * ---------------------------------------*/
 
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
-void findLongestSubarrayBySum(int s, int *arr,int size){
+// Solution #1
+// Complexity => O(n)
+vector<int> findLongestSubarrayBySum(int s, vector<int> arr){
 
     int currentSum = 0;
     int left = 0, right = 0;
-    int result[] = {-1,-1};
+    vector<int> result(2);
 
-    while(right < size){
+    result.push_back(-1);
+
+    while(right < arr.size()){
 
         currentSum += arr[right];
 
         while(left < right && currentSum > s)
             currentSum -= arr[left++];
         
-        if(currentSum == s && (result[0] == -1 || result[1]-result[0] < right-left)){
+        if(currentSum == s && (result.size() == -1 || result[1]-result[0] < right-left)){
             result[0] = left+1, result[1] = right+1;
         }
 
         right++;
     }
-
-    cout<<"Output: [ "<<result[0]<<" , "<<result[1]<<"]"<<endl;
+    
+    return result; 
 }
 
 int main(int argc, char const *argv[])
 {
-    int arr[] = {1,2,3,7,5};
-    int size = sizeof(arr)/sizeof(arr[0]);
-    findLongestSubarrayBySum(12,arr,size);
+    vector<int> arr = {1,2,3,7,5},result;
+    result = findLongestSubarrayBySum(5,arr);
+    
+    cout<<"Output: [ "<<result[0]<<" , "<<result[1]<<"]"<<endl;
+    
     return 0;
 }
 
