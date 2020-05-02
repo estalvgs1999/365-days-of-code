@@ -12,8 +12,8 @@
 #  letters. The palindrome does not need
 #  to be limited to just dictionary words
 #  
-#  >> Input: "Mr John Smith"
-#  >> Output: "Mr%20John%20Smith"
+#  >> Input: "Tact Coa"
+#  >> Output: True (permutations:"taco cat'; "atco cta '; etc.)
 #  
 #  Question 1.4 | ctci 6th edition
 #
