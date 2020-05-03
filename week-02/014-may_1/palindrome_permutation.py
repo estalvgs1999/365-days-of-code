@@ -13,7 +13,8 @@
 #  to be limited to just dictionary words
 #  
 #  >> Input: "Tact Coa"
-#  >> Output: True (permutations:"taco cat'; "atco cta '; etc.)
+#  >> Output: True 
+#  (permutations:"taco cat'; "atco cta '; etc.)
 #  
 #  Question 1.4 | ctci 6th edition
 #
