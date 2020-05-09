@@ -11,8 +11,10 @@
 #  by: @estalvgs1999
 # ---------------------------------------
 
-import sys
-sys.path.insert(0, "/home/estalvgs1999/Documentos/code skills/CI02-Project-365/data_structures/linked_list")
+import sys, os
+file_dir = os.path.dirname(os.path.abspath(__file__))
+directory_file = os.path.dirname(os.path.dirname(file_dir))
+sys.path.insert(0, directory_file+'/data_structures/linked_list')
 import linked_list as LL
 
 # Remove duplicates from an unsorted linked list
