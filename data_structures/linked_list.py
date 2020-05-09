@@ -1,14 +1,8 @@
-
-# Data Structures Node
-class Node:
-    
-    def __init__(self, data):
-        self.data = data
-        self.next = None
-
-    def set_next(self, next_node):
-        self.next = next_node
-        
+# ---------------------------------------
+#  LINKED LIST
+#  by: @estalvgs1999
+# ---------------------------------------
+from node import *
 
 # Linked_List
 class Linked_List():
