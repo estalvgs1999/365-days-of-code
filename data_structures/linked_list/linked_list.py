@@ -127,6 +127,9 @@ class Linked_List():
     def head(self):
         return self.__head
 
+    def set_head(self, node):
+        self.__head = node
+
     def __check_index(self, index):
         if index >= self.__length or index < 0:
             print('IndexError: list index out of range')
