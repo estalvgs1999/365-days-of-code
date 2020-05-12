@@ -106,7 +106,21 @@ class Linked_List():
             c_index+=1
         
         return c_node.data
+
+    # Returns the node on certain index
+    def get_node(self, index):
+
+        if not self.__check_index(index):
+            return
+
+        c_node = self.__head
+        c_index = 0
+
+        while c_index != index:
+            c_node = c_node.next
+            c_index+=1
         
+        return c_node
 
     # Shows the list
     def show(self):
